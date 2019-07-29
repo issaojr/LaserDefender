@@ -5,8 +5,15 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    // configuration parameters
     [SerializeField] float moveSpeed = 10.0f;
-    [SerializeField] float padding = 1f; 
+    [SerializeField] float padding = 1f;
+    [SerializeField] GameObject laserPrefab;
+    [SerializeField] float projectileSpeed = 10f;
+
+    [SerializeField] float projectileFiringPeriod = 0.1f;
+
+    Coroutine firingCoroutine;
 
     float xMin, xMax, yMin, yMax;
 
@@ -19,17 +26,43 @@ public class Player : MonoBehaviour
     private void SetUpMoveBoundaries()
     {
         Camera gameCamera = Camera.main;
-        xMin = gameCamera.ViewportToWorldPoint(new Vector3(0,0,0)).x + padding;
-        xMax = gameCamera.ViewportToWorldPoint(new Vector3(1,0,0)).x - padding;
+        xMin = gameCamera.ViewportToWorldPoint(new Vector3(0, 0, 0)).x + padding;
+        xMax = gameCamera.ViewportToWorldPoint(new Vector3(1, 0, 0)).x - padding;
 
-        yMin = gameCamera.ViewportToWorldPoint(new Vector3(0,0,0)).y + padding;
-        yMax = gameCamera.ViewportToWorldPoint(new Vector3(0,1,0)).y - padding;
+        yMin = gameCamera.ViewportToWorldPoint(new Vector3(0, 0, 0)).y + padding;
+        yMax = gameCamera.ViewportToWorldPoint(new Vector3(0, 1, 0)).y - padding;
     }
 
     // Update is called once per frame
     void Update()
     {
         Move();
+        Fire();
+    }
+
+    private void Fire()
+    {
+        if (Input.GetButtonDown("Fire1"))
+        {
+            firingCoroutine = StartCoroutine(FireConstinuosly());
+        }
+        if (Input.GetButtonUp("Fire1"))
+        {
+            StopCoroutine(firingCoroutine);
+        }
+    }
+
+    IEnumerator FireConstinuosly()
+    {
+        while (true)
+        {
+            GameObject laser = Instantiate(
+                    laserPrefab,
+                    transform.position,
+                    Quaternion.identity) as GameObject;
+            laser.GetComponent<Rigidbody2D>().velocity = new Vector2(0, projectileSpeed);
+            yield return new WaitForSeconds(projectileFiringPeriod);
+        }
     }
 
     private void Move()
