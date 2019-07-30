@@ -57,6 +57,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -94,3 +95,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 10
   padding: 1
+  laserPrefab: {fileID: 7219130675583625294, guid: 8e414cee15919004aace12ce3f2f0536,
+    type: 3}
+  projectileSpeed: 20
+  projectileFiringPeriod: 0.1
