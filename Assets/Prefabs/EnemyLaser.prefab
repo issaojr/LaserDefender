@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4922998250394681985}
   - component: {fileID: 8517257835208878417}
   - component: {fileID: 7315856794693111233}
+  - component: {fileID: 6127024760501382047}
   m_Layer: 0
   m_Name: EnemyLaser
   m_TagString: Untagged
@@ -70,7 +71,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 9bf5dd3ce9fe6c8428a10b342ea1540e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9a2c26f4b0b08684d88ddc0b85e19595, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -102,3 +103,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!70 &6127024760501382047
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3058094896203297699}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 0.26, y: 0.74}
+  m_Direction: 0
