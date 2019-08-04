@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    [SerializeField] float health = 100f;
+    [SerializeField] int health = 100;
     [SerializeField] float shotCounter;
     [SerializeField] float minTimeBetweenShots = 0.2f;
     [SerializeField] float maxTimeBetweenShots = 3f;
@@ -46,12 +46,14 @@ public class Enemy : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         DamageDealer damageDealer = other.gameObject.GetComponent<DamageDealer>();
+        if(!damageDealer) { return; }
         ProcessHit(damageDealer);
     }
 
     private void ProcessHit(DamageDealer damageDealer)
     {
         health -= damageDealer.GetDamage();
+        damageDealer.Hit();
         if (health <= 0)
         {
             Destroy(gameObject);
