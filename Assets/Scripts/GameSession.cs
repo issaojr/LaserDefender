@@ -6,8 +6,13 @@ using UnityEngine;
 public class GameSession : MonoBehaviour
 {
     int score = 0;
+    int health;
 
-    void Awake() => SetUpSingleton();
+    void Awake()
+    {
+        SetUpSingleton();
+        health = FindObjectOfType<Player>().GetHealth();
+    }
 
     private void SetUpSingleton()
     {
@@ -26,6 +31,16 @@ public class GameSession : MonoBehaviour
     public int GetScore()
     {
         return score;
+    }
+
+    public int GetHealth()
+    {
+        return health;
+    }
+
+    public void SetHealth(int health)
+    {
+        this.health = health;
     }
 
     public void AddToScore(int score)

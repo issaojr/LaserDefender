@@ -61,7 +61,12 @@ public class Player : MonoBehaviour
         damageDealer.Hit();
         if (health <= 0)
         {
+            FindObjectOfType<GameSession>().SetHealth(0);
             Die();
+        }
+        else
+        {
+            FindObjectOfType<GameSession>().SetHealth(health);
         }
     }
 
@@ -107,5 +112,10 @@ public class Player : MonoBehaviour
         var newYPos = Mathf.Clamp(transform.position.y + deltaY, yMin, yMax);
 
         transform.position = new Vector2(newXPos, newYPos);
+    }
+
+    public int GetHealth()
+    {
+        return health;
     }
 }
