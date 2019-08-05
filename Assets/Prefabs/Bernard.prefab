@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2998379857889661613}
   - component: {fileID: 1522676560813649590}
   - component: {fileID: 2874184602712367190}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Bernard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -114,6 +114,13 @@ MonoBehaviour:
   projectile: {fileID: 3058094896203297699, guid: 7b93fa3c8f61fe7409d5b689b10558f5,
     type: 3}
   projectileSpeed: 10
+  deathVFX: {fileID: 2739145701145120077, guid: e6edc09e5d8a1ee48b252cab33b368b3,
+    type: 3}
+  durationOfExplosion: 0.5
+  deathSFX: {fileID: 8300000, guid: 4ddb3aeb2d386ed41b349e171d00c545, type: 3}
+  deathSFXVolume: 0.7
+  shootSFX: {fileID: 8300000, guid: 8037b2df54763cd4fbf2ac67911cd0d0, type: 3}
+  shootSFXVolume: 0.5
 --- !u!58 &2874184602712367190
 CircleCollider2D:
   m_ObjectHideFlags: 0
