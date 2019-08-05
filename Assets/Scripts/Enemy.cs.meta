@@ -3,7 +3,13 @@ guid: d32729b984eb29047a890b9fb3a6f7a6
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - projectile: {fileID: 3058094896203297699, guid: 7b93fa3c8f61fe7409d5b689b10558f5,
+      type: 3}
+  - deathVFX: {fileID: 2739145701145120077, guid: e6edc09e5d8a1ee48b252cab33b368b3,
+      type: 3}
+  - deathSFX: {fileID: 8300000, guid: 4ddb3aeb2d386ed41b349e171d00c545, type: 3}
+  - shootSFX: {fileID: 8300000, guid: 40b018a79f34d2d48b6e999556071be1, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
