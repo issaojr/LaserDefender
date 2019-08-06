@@ -516,7 +516,6 @@ GameObject:
   - component: {fileID: 595266792}
   - component: {fileID: 595266796}
   - component: {fileID: 595266795}
-  - component: {fileID: 595266794}
   - component: {fileID: 595266793}
   m_Layer: 5
   m_Name: PlayAgainButton
@@ -601,19 +600,6 @@ MonoBehaviour:
         m_CallState: 1
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
---- !u!114 &595266794
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 595266791}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ad9af2fe8f58d104e893e511d43091d2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  backgroundScrollSpeed: 0.5
 --- !u!114 &595266795
 MonoBehaviour:
   m_ObjectHideFlags: 0
